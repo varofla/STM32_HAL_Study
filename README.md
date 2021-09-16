@@ -7,7 +7,9 @@
 > Windows 10 및 macOS(M1)에서 문제 없이 따라하실 수 있습니다.
 
 > 아두이노를 사용해보았으면 더욱 좋습니다!
----
+
+<br>
+
 ## 🔧 STM32 HAL 메인
 0. [CubeIDE 프로젝트 생성 및 설정](https://slt.pw/JjmEF8M)  
 STM32에 대해 알아보고 CubeIDE를 설치해보자!
@@ -18,6 +20,7 @@ PC와 통신해 쉽게 디버깅해보자!
 2. [디지털 입출력(스위치, LED)]() (작성중)  
 스위치를 이용해 LED를 끄고 켜보자!
 
----
+<br>
+
 ## 💡 STM32 HAL 팁
 1. [CubeIDE 한글 깨짐 해결](https://slt.pw/Y40jzJS)
