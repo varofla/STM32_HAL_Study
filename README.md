@@ -17,10 +17,14 @@ STM32에 대해 알아보고 CubeIDE를 설치해보자!
 1. [UART/시리얼 통신](https://slt.pw/spJzg2j)  
 PC와 통신해 쉽게 디버깅해보자!
 
-2. [디지털 입출력(스위치, LED)]() (작성중)  
+2. [디지털 입출력(스위치, LED)](https://slt.pw/R009RYj)  
 스위치를 이용해 LED를 끄고 켜보자!
 
 <br>
 
 ## 💡 STM32 HAL 팁
-1. [CubeIDE 한글 깨짐 해결](https://slt.pw/Y40jzJS)
+1. [CubeIDE 한글 깨짐 해결](https://slt.pw/Y40jzJS)  
+CubeMX의 코드 생성이나, 파일을 불러올때 한글이 깨진다면?
+
+2. [us단위 Delay 구현]() (작성중)  
+ms단위인 HAL_Delay() 만으로는 부족하다면?
