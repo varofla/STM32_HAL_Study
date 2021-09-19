@@ -59,9 +59,9 @@ static void MX_TIM1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void delay_us (uint16_t time) {
-	__HAL_TIM_SET_COUNTER(&htim1, 0);
-	while ((__HAL_TIM_GET_COUNTER(&htim1))<time);
+void delay_us(uint16_t time) {
+	__HAL_TIM_SET_COUNTER(&htim1, 0);              // 타이머를 0으로 초기화
+	while((__HAL_TIM_GET_COUNTER(&htim1))<time);  // 설정한 시간까지 대기
 }
 /* USER CODE END 0 */
 
@@ -96,7 +96,7 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_Base_Start(&htim1);
+  HAL_TIM_Base_Start(&htim1);  // delay_ms() 함수를 위한 타이머 시작
   /* USER CODE END 2 */
 
   /* Infinite loop */
