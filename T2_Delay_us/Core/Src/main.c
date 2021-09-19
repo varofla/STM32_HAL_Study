@@ -59,7 +59,7 @@ static void MX_TIM1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void delay (uint16_t time) {
+void delay_us (uint16_t time) {
 	__HAL_TIM_SET_COUNTER(&htim1, 0);
 	while ((__HAL_TIM_GET_COUNTER(&htim1))<time);
 }
@@ -104,9 +104,9 @@ int main(void)
   while (1)
   {
 	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_SET);
-	  delay(10);
+	  delay_us(10);
 	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_RESET);
-	  delay(10);
+	  delay_us(10);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
