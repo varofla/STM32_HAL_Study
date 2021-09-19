@@ -61,7 +61,7 @@ static void MX_TIM1_Init(void);
 /* USER CODE BEGIN 0 */
 void delay_us(uint16_t time) {
 	__HAL_TIM_SET_COUNTER(&htim1, 0);              // 타이머를 0으로 초기화
-	while((__HAL_TIM_GET_COUNTER(&htim1))<time);  // 설정한 시간까지 대기
+	while((__HAL_TIM_GET_COUNTER(&htim1))<time);   // 설정한 시간까지 대기
 }
 /* USER CODE END 0 */
 
