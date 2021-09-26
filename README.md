@@ -29,5 +29,5 @@ PC와 통신해 쉽게 디버깅해보자!
 1. [CubeIDE 한글 깨짐 해결](https://slt.pw/Y40jzJS)  
 CubeMX의 코드 생성이나, 파일을 불러올때 한글이 깨진다면?
 
-2. [us단위 Delay 구현]() (작성중) - [<T2_Delay_us>](https://github.com/varofla/STM32_HAL_Study/tree/main/T2_Delay_us)  
+2. [us단위 Delay 구현](https://slt.pw/LkLnaw6) - [<T2_Delay_us>](https://github.com/varofla/STM32_HAL_Study/tree/main/T2_Delay_us)  
 ms단위인 HAL_Delay() 만으로는 부족하다면?
