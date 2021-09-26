@@ -31,3 +31,8 @@ CubeMX의 코드 생성이나, 파일을 불러올때 한글이 깨진다면?
 
 2. [us단위 Delay 구현](https://slt.pw/LkLnaw6) - [<T2_Delay_us>](https://github.com/varofla/STM32_HAL_Study/tree/main/T2_Delay_us)  
 ms단위인 HAL_Delay() 만으로는 부족하다면?
+
+<br>
+
+## 🔉 모듈별 사용방법 정리
+1. [DHT11 온습도센서](https://slt.pw/lj23Uhi) - [<3_DHT11>](https://github.com/varofla/STM32_HAL_Study/tree/main/3_DHT11)  
