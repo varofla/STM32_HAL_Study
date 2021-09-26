@@ -20,7 +20,7 @@ PC와 통신해 쉽게 디버깅해보자!
 2. [디지털 입출력(스위치, LED)](https://slt.pw/R009RYj) - [<2_Digital_IO>](https://github.com/varofla/STM32_HAL_Study/tree/main/2_Digital_IO)  
 스위치를 이용해 LED를 끄고 켜보자!
 
-3. [DHT11 온습도센서]() (작성중) - [<3_DHT11>](https://github.com/varofla/STM32_HAL_Study/tree/main/3_DHT11)  
+3. [DHT11 온습도센서](https://slt.pw/lj23Uhi) - [<3_DHT11>](https://github.com/varofla/STM32_HAL_Study/tree/main/3_DHT11)  
 디지털 입출력 함수로 온습도센서를 읽어보자!
 
 <br>
