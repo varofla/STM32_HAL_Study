@@ -185,7 +185,7 @@ int main(void)
   while (1)
   {
 	  if(dht11_read() == 1) { // 데이터가 정상적으로 수신된 경우
-		  sprintf((char *)buffer, "%d°C, %d%%\n", Temperature, Humidity);
+		  sprintf((char *)buffer, "%dC, %d%%\n", Temperature, Humidity);
 		  HAL_UART_Transmit(&huart2, buffer, strlen((char *)buffer), 100);
 	  } else {                // 타임아웃
 		  sprintf((char *)buffer, "timeout\n");
