@@ -23,7 +23,7 @@ PC와 통신해 쉽게 디버깅해보자!
 3. [DHT11 온습도센서](https://slt.pw/DvfGvXU) - [<3_DHT11>](https://github.com/varofla/STM32_HAL_Study/tree/main/3_DHT11)  
 디지털 입출력 함수로 온습도센서를 읽어보자!
 
-4. [1602 LCD 디스플레이]() - [<4_1602LCD>](https://github.com/varofla/STM32_HAL_Study/tree/main/4_1602LCD)  
+4. [1602 LCD 디스플레이](https://blog.naver.com/dhksrl0508/222581328912) - [<4_1602LCD>](https://github.com/varofla/STM32_HAL_Study/tree/main/4_1602LCD)  
 1602 LCD 디스플레이를 사용해보자!
 
 <br>
@@ -40,4 +40,4 @@ ms단위인 HAL_Delay() 만으로는 부족하다면?
 ## 🔉 모듈별 사용방법 정리
 1. [DHT11 온습도센서](https://slt.pw/DvfGvXU) - [<3_DHT11>](https://github.com/varofla/STM32_HAL_Study/tree/main/3_DHT11)  
 
-2. [1602 LCD 디스플레이]() - [<4_1602LCD>](https://github.com/varofla/STM32_HAL_Study/tree/main/4_1602LCD) 
+2. [1602 LCD 디스플레이](https://blog.naver.com/dhksrl0508/222581328912) - [<4_1602LCD>](https://github.com/varofla/STM32_HAL_Study/tree/main/4_1602LCD) 
