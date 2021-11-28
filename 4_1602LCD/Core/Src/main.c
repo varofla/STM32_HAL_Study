@@ -19,12 +19,11 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include <stdio.h>
-#include <string.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdio.h>
+#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -60,13 +59,13 @@ static void MX_TIM1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-//----- us단위 대기 함수
+//----- us단위 대기 함수 (https://slt.pw/iyFFwF1 참고)
 void delay_us(uint16_t time) {
 	__HAL_TIM_SET_COUNTER(&htim1, 0);
 	while((__HAL_TIM_GET_COUNTER(&htim1))<time);
 }
 
-//----- EN핀 펄스 생성 함수 (https://slt.pw/iyFFwF1 참고)
+//----- EN핀 펄스 생성 함수
 void pulse_en() {
     HAL_GPIO_WritePin(EN_1602_GPIO_Port, EN_1602_Pin, 1);
     delay_us(20);
@@ -84,8 +83,6 @@ void lcd_send_4bit(char data) {
 }
 
 //----- LCD 디스플레이로 8bit 데이터 전송
-// rs = 0 -> 설정
-// rs = 1 -> 데이터
 void lcd_send_8bit(char data) {
 	lcd_send_4bit((data >> 4) & 0x0F); // 상위 4비트 전송
 	lcd_send_4bit(data & 0x0F);        // 하위 4비트 전송
@@ -200,7 +197,7 @@ int main(void)
 	  sprintf(buffer, "cnt: %d", cnt); // 카운트를 표시하는 문자열 생성
 	  lcd_send_string(buffer);         // LCD 문자열 표시
 	  cnt++;                           // cmd 1 더함
-    HAL_Delay(1000);
+	  HAL_Delay(1000);                 // 1초 대기
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
