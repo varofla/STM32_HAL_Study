@@ -66,7 +66,7 @@ void delay_us(uint16_t time) {
 	while((__HAL_TIM_GET_COUNTER(&htim1))<time);
 }
 
-//----- EN핀 펄스 신호 전송 함수
+//----- EN핀 펄스 생성 함수 (https://slt.pw/iyFFwF1 참고)
 void pulse_en() {
     HAL_GPIO_WritePin(EN_1602_GPIO_Port, EN_1602_Pin, 1);
     delay_us(20);
@@ -87,11 +87,11 @@ void lcd_send_4bit(char data) {
 // rs = 0 -> 설정
 // rs = 1 -> 데이터
 void lcd_send_8bit(char data) {
-	lcd_send_4bit((data >> 4) & 0x0F);
-	lcd_send_4bit(data & 0x0F);
+	lcd_send_4bit((data >> 4) & 0x0F); // 상위 4비트 전송
+	lcd_send_4bit(data & 0x0F);        // 하위 4비트 전송
 }
 
-//----- LCD 디스플레이 커서 설정 -> RS: 0
+//----- LCD 디스플레이 커서 설정
 void lcd_set_cur(int row, int col) {
 	HAL_GPIO_WritePin(RS_1602_GPIO_Port, RS_1602_Pin, 0); // 설정 모드
     switch (row) {
@@ -105,14 +105,14 @@ void lcd_set_cur(int row, int col) {
     lcd_send_8bit(col); // DDRAM AD Set 명령
 }
 
-//----- LCD 디스플레이 문자 비우기 -> RS: 0
+//----- LCD 디스플레이 문자 비우기
 void lcd_clear() {
 	HAL_GPIO_WritePin(RS_1602_GPIO_Port, RS_1602_Pin, 0); // 설정 모드
 	lcd_send_8bit(0b00000001); // Screen Clear 명령 -> 디스플레이 내용 지움
 	HAL_Delay(2);              // 명령 실행시간인 1.64ms 이상 대기
 }
 
-//----- LCD 디스플레이로 문자열 전송 -> RS: 1
+//----- LCD 디스플레이로 문자열 전송
 void lcd_send_string(char *str) {
 	HAL_GPIO_WritePin(RS_1602_GPIO_Port, RS_1602_Pin, 1); // 문자 전송 모드
 	// 보낼 string 주소값(포인터)을 받아 문자 하나씩 lcd_send_8bit 함수로 보내며 포인터 1씩 올림(=다음 문자 선택)
@@ -151,9 +151,6 @@ void lcd_init(void) {
     lcd_send_8bit(0b00001100); // Display Switch 명령 -> D=0, C=0, B=0  -> 디스플레이 ON, 커서 OFF, 블링크 OFF
     HAL_Delay(1);
 }
-
-
-
 /* USER CODE END 0 */
 
 /**
@@ -192,19 +189,18 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  lcd_init();
-  lcd_set_cur(0, 0);
-  lcd_send_string("Hello World!");
-//  lcd_clear();
-  int cnt = 0;
-  char buffer[16];
-  while (1)
-  {
-	  lcd_set_cur(1, 0);
-	  sprintf(buffer, "cnt: %d", cnt);
-	  lcd_send_string(buffer);
-	  cnt++;
-	  HAL_Delay(1000);
+  lcd_init();                      // LCD init
+  lcd_set_cur(0, 0);               // 커서 0, 0 이동
+  lcd_send_string("Hello World!"); // LCD Hello World! 문자열 표시
+
+  int cnt = 0;     // 카운트를 위한 숫자 변수
+  char buffer[16]; // 문자열 생성을 위한 변수
+  while (1) {
+	  lcd_set_cur(1, 0);               // 커서 1, 0 이동
+	  sprintf(buffer, "cnt: %d", cnt); // 카운트를 표시하는 문자열 생성
+	  lcd_send_string(buffer);         // LCD 문자열 표시
+	  cnt++;                           // cmd 1 더함
+    HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
