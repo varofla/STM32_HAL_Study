@@ -26,6 +26,9 @@ PC와 통신해 쉽게 디버깅해보자!
 4. [1602 LCD 디스플레이](https://blog.naver.com/dhksrl0508/222581328912) - [<4_1602LCD>](https://github.com/varofla/STM32_HAL_Study/tree/main/4_1602LCD)  
 1602 LCD 디스플레이를 사용해보자!
 
+5. [ADC Polling Mode(작성중)]() - [<5_ADC_Polling>](https://github.com/varofla/STM32_HAL_Study/tree/main/5_ADC_Polling)  
+Polling Mode로 ADC를 사용해보자!
+
 <br>
 
 ## 💡 STM32 HAL 팁
